@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Coding Practice & Skill Analysis Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>🚀 Smart Coding Practice & Skill Analysis Platform</h1>
+      <p>Mini LeetCode + HackerRank style experience with AI-powered weakness prediction.</p>
+      <a class="btn" href="#dashboard">Start Practicing</a>
+    </div>
+  </header>
+
+  <main class="container" id="dashboard">
+    <section class="card" id="auth">
+      <h2>1️⃣ User Login System</h2>
+      <form id="loginForm" class="grid">
+        <input id="name" placeholder="Student name" required />
+        <input id="college" placeholder="College" required />
+        <button class="btn" type="submit">Login / Register</button>
+      </form>
+      <div id="profile" class="hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>2️⃣ Coding Problems</h2>
+      <div class="filters">
+        <select id="difficultyFilter">
+          <option value="all">All Difficulty</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+        <select id="topicFilter">
+          <option value="all">All Topics</option>
+          <option value="Arrays">Arrays</option>
+          <option value="Strings">Strings</option>
+          <option value="Recursion">Recursion</option>
+          <option value="Data Structures">Data Structures</option>
+          <option value="SQL Basics">SQL Basics</option>
+        </select>
+      </div>
+      <ul id="problemList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>3️⃣ Online Code Editor</h2>
+      <div class="editor-head">
+        <label>Language:
+          <select id="language">
+            <option>Python</option>
+            <option>C</option>
+            <option>Java</option>
+          </select>
+        </label>
+        <label>Time taken (minutes):
+          <input id="timeTaken" type="number" min="1" value="8" />
+        </label>
+      </div>
+      <textarea id="codeEditor" rows="10" placeholder="Write your code here..."></textarea>
+      <div class="actions">
+        <button class="btn secondary" id="runBtn">Run</button>
+        <button class="btn" id="submitBtn">Submit</button>
+      </div>
+      <pre id="output"></pre>
+    </section>
+
+    <section class="card">
+      <h2>4️⃣ Performance Analyzer + 🤖 AI Weakness Predictor</h2>
+      <div class="stats" id="stats"></div>
+      <p id="aiSuggestion" class="highlight"></p>
+      <h3>Personalized Practice Suggestions</h3>
+      <ul id="recommendations"></ul>
+    </section>
+
+    <section class="card">
+      <h2>5️⃣ Leaderboard</h2>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Name</th><th>College</th><th>Weekly Score</th></tr>
+        </thead>
+        <tbody id="leaderboard"></tbody>
+      </table>
+      <button class="btn secondary" id="exportBtn">Export Leaderboard CSV</button>
+    </section>
+
+    <section class="card">
+      <h2>6️⃣ Mini Contest Mode ⏱</h2>
+      <p>1-hour challenge timer:</p>
+      <div id="timer">60:00</div>
+      <button class="btn" id="startContest">Start Contest</button>
+    </section>
+
+    <section class="card">
+      <h2>Extra Advanced Features</h2>
+      <ul>
+        <li>✅ Code similarity checker (basic textual similarity demo)</li>
+        <li>✅ Admin panel-like question management (in-browser add problem)</li>
+        <li>✅ Leaderboard export to CSV (Excel friendly)</li>
+      </ul>
+      <form id="addProblemForm" class="grid">
+        <input id="newTitle" placeholder="Problem title" required />
+        <select id="newDifficulty">
+          <option>Easy</option>
+          <option>Medium</option>
+          <option>Hard</option>
+        </select>
+        <input id="newTopic" placeholder="Topic" required />
+        <button class="btn" type="submit">Add Problem</button>
+      </form>
+      <p id="similarity"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
